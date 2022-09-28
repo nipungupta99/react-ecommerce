@@ -3,16 +3,36 @@ import "./Homepage.css";
 import Product from "./product";
 import Category from "./category";
 import Recently from "./Recently";
+import SimpleImageSlider from "react-simple-image-slider";
 function Homepage() {
+  const images = [
+    {
+      url: "https://img.freepik.com/free-psd/medical-horizontal-banner-template_23-2148940482.jpg?w=2000",
+    },
+    {
+      url: "https://img.freepik.com/free-vector/modern-website-banner-template-with-abstract-shapes_1361-3311.jpg?w=2000",
+    },
+    {
+      url: "https://img.freepik.com/free-vector/professional-website-banner-with-blue-shapes_1361-1531.jpg?w=2000",
+    },
+  ];
+
   return (
     <div className="home container">
-        <div className="banner">
-            <img className="image"src="https://img.freepik.com/free-psd/medical-horizontal-banner-template_23-2148940482.jpg?w=2000" alt="" />
-        </div> <br /><br />
+      <div>
+        <SimpleImageSlider
+          width={1300}
+          height={600}
+          images={images}
+          showBullets={true}
+          showNavs={true}
+        />
+      </div>{" "}
+      <br />
+      <br />
       <div className="heading ">
         <h1>India’s Leading Platform for Natural Herbs</h1>
       </div>
-
       <div className="uppertext">
         <div>
           <h3>Something here.</h3>
@@ -40,7 +60,6 @@ function Homepage() {
         </div>
       </div>
       <br />
-
       <div className="toprated ">
         <div className="top ">
           <div className="rated d-flex mx-5">
@@ -83,7 +102,6 @@ function Homepage() {
       </div>
       <br />
       <br />
-
       <div className="final">
         <div className="recent d-flex mx-5">
           <div>
