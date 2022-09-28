@@ -1,0 +1,40 @@
+.banner{
+    display: flex;
+    width: 350px;
+}
+.image{display: flex;
+    width: 1312px;
+    
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+
+}
+
+.uppertext{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.rating{
+    display: flex;
+    width: 37px;
+    height: 25px;
+}
+
+.recent{
+    display: flex;
+    justify-content: space-between;
+
+}
