@@ -1,5 +1,5 @@
 import React from "react";
-import "./Homepage.css";
+import "../styles/HomePage.scss";
 import Product from "./product";
 import Category from "./category";
 import Recently from "./Recently";
@@ -114,6 +114,8 @@ function Homepage() {
             </button>
           </div>
         </div>
+        <br />
+        <br />
         <div className="recentlyview d-flex">
           <Recently />
           <Recently />
