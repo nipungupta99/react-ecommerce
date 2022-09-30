@@ -1,0 +1,41 @@
+.form{
+    display: flex;
+    margin-left: 30%;
+    gap: 50px;
+}
+
+.second{
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 7%;
+    padding-top: 1px ;
+}
+.bottom_div{
+    display: flex;
+    margin-left: 30%;
+}
+
+.acco{
+    display: flex;
+    justify-content: space-between;
+    
+    margin-right: 40%;
+    align-items: center;
+    gap: 50px;
+    background-color: orange;
+    border: 0%;
+    border-radius: 10px;
+}
+
+
+
+.password{
+    border: none;
+}
+
+
+.button{
+    border: 0ch;
+    background-color:  orange;
+}
