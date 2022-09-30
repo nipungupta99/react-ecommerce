@@ -9,30 +9,32 @@ function cart() {
     <div className="cart d-flex ">
       <div>
         <div>
-          <div className="yourcart d-flex m-5">
+          <div className="yourcart d-flex ">
             <span>
-              <BsCartDash />
+              <BsCartDash size={42} />
             </span>
-            <h2>Your Cart</h2>
+            <h1>Your Cart</h1>
           </div>
         </div>
         <Cartproduct />
+        
         <Cartproduct />
         <Cartproduct />
         <Cartproduct />
         <Cartproduct />
       </div>
 
-      <div>
+      <div >
         <div>
-          <div>
-            <h3>
-              {" "}
-              <span>
-                <SiCashapp />
-              </span>{" "}
-              PRICE DETAILS
-            </h3>
+          <div className="price_details">
+            
+              <h3 className="m-0">
+                <span>
+                  <SiCashapp className="mb-2" />
+                </span>
+                PRICE DETAILS
+              </h3>
+            
           </div>
           <br />
 
@@ -75,11 +77,11 @@ function cart() {
             <br />
             <div>
               <button
-                className="placeorder w-5"
+                className="placeorder"
                 type="button"
                 class="btn btn-warning"
               >
-                placeorder
+                PLACE ORDER
               </button>{" "}
             </div>
           </div>
@@ -88,13 +90,13 @@ function cart() {
         <br />
 
         <div>
-          <div>
-            <h3>
-              <span>
-                <BiNavigation />
-              </span>
-              DILIVERY DETAILS
-            </h3>
+          <div className="dilivery ">
+          <h3 className="m-0">
+                <span>
+                  <BiNavigation className="mb-2" />
+                </span>
+                Delivery Details
+              </h3>
           </div>
           <br />
           <div>
