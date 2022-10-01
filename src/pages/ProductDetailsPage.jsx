@@ -112,13 +112,17 @@ function ProductDetailsPage() {
             worse pains."
           </p>
 
-          <div className="gap-5 d-flex p-3 m-3 ">
-            <button className="btn  p-3 m-3 btn-warning">
-              view all reviews
-            </button>
-            <button className="btn  p-3 m-3 btn-outline-warning">
-              rate product
-            </button>
+          <div className="gap-5 d-flex  ">
+            <div>
+              <button className="btn px-5 py-2  btn-warning">
+                <b>View All Reviews</b>
+              </button>
+            </div>
+            <div className="">
+              <button className="btn px-5 py-2 btn-outline-warning">
+                <b>Rate Product</b>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -160,15 +164,25 @@ function ProductDetailsPage() {
       <section>
         <div className="d-flex  justify-content-between">
           <h1>Similar Products</h1>
-          <button className="btn btn-warning px-5">
+          <button className="btn btn-warning  w-25 ">
             <b>View all</b>
           </button>
+        </div>
+        <div className="d-flex m-2">
+          <CategorySlide />
+          <CategorySlide />
+          <CategorySlide />
+          <CategorySlide />
+          <CategorySlide />
+          <CategorySlide />
+          <CategorySlide />
+          <CategorySlide />
         </div>
       </section>
       <section>
         <div className="d-flex  justify-content-between">
           <h1>Recently Viewed</h1>
-          <button className="btn btn-warning px-5">
+          <button className="btn btn-warning w-25">
             <b>View all</b>
           </button>
         </div>
