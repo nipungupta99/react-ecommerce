@@ -1,10 +1,31 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/HomePage.scss";
 import Product from "./product";
 import Category from "./category";
 import Recently from "./Recently";
 import SimpleImageSlider from "react-simple-image-slider";
+import axios from 'axios';
 function Homepage() {
+
+  const [topRated, setTopRated] = useState([]);
+  
+  const[categories,setCategories] = useState([])
+  const[newarrivals,setNewarrivals] = useState([])
+  // const[product,setProduct] = useState()
+  // const[product,setProduct] = useState()
+
+  useEffect (()=>{
+    axios.get("http://localhost/homepage/top-rated").then((res)=>setTopRated(res.data.data)).catch((err)=>console.log(err))
+  }, [])
+
+  useEffect(()=>{
+    axios.get("http://localhost/homepage/categories-list#").then((res)=>setCategories(res.data.data)).catch((err)=>console.log(err))
+  },[] )
+
+  useEffect(()=>{
+    axios.get("http://localhost/homepage/new-arrivals").then((res)=>setNewarrivals(res.data.data)).catch((err)=>console.log(err))
+  },[] )
+  
   const images = [
     {
       url: "https://img.freepik.com/free-psd/medical-horizontal-banner-template_23-2148940482.jpg?w=2000",
@@ -75,12 +96,9 @@ function Homepage() {
         <br />
 
         <div className="d-flex ">
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+         {
+          topRated.map(item => <Product heroImageURL={item.heroImageURL}name={item.name} category={item.category} price={item.price} discountedPrice={item.discountedPrice} rating={item?.ratingAndReviews?.aggregation?.averageRating} />)
+         } 
         </div>
 
         <div>
@@ -90,13 +108,11 @@ function Homepage() {
           <br />
           <br />
           <div className="category d-flex mx-4">
-            <Category />
-            <Category />
-            <Category />
-            <Category />
-            <Category />
-            <Category />
-            <Category />
+            {
+              categories.map(item => <Category  heroImageURL={item.heroImageURL} category={item.category}/>)
+            }
+            
+           
           </div>
         </div>
       </div>
@@ -117,12 +133,10 @@ function Homepage() {
         <br />
         <br />
         <div className="recentlyview d-flex">
-          <Recently />
-          <Recently />
-          <Recently />
-          <Recently />
-          <Recently />
-          <Recently />
+          {
+            newarrivals.map(item=><Recently heroImageURL={item.heroImageURL} category={item.category} brand={item.brand} price={item.price} discountedPrice={item.discountedPrice}/>)
+          }
+          
         </div>
       </div>
     </div>

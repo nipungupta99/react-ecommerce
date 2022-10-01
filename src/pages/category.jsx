@@ -1,16 +1,16 @@
 import React from "react";
 
-function Category() {
+function Category(props) {
   return (
     <div>
       <div className="cat mx-4">
         <img
-          src="https://onemg.gumlet.io/images/f_auto,q_auto,w_150,c_fit,h_150/cropped/j4vwgeja6thehccimpbs/onetouch-select-test-strip.png"
+          src={props.heroImageURL}
           alt=""
         />
         <br />
         <br />
-        <h5>ONE TOUCH</h5>
+        <h5>{props.category}</h5>
       </div>
     </div>
   );
