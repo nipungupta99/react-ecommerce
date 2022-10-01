@@ -1,6 +1,6 @@
 import React from "react";
 import { FiStar } from "react-icons/fi";
-function Recently(props) {
+function Newarrival(props) {
   return (
     <div>
       <div className="item mx-5 ">
@@ -32,4 +32,4 @@ function Recently(props) {
     </div>
   );
 }
-export default Recently;
+export default Newarrival;

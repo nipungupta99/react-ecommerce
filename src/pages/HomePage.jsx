@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "../styles/HomePage.scss";
 import Product from "./product";
 import Category from "./category";
-import Recently from "./Recently";
+import Newarrival from "./Newarrival";
 import SimpleImageSlider from "react-simple-image-slider";
 import axios from 'axios';
 function Homepage() {
@@ -134,7 +134,7 @@ function Homepage() {
         <br />
         <div className="recentlyview d-flex">
           {
-            newarrivals.map(item=><Recently heroImageURL={item.heroImageURL} category={item.category} brand={item.brand} price={item.price} discountedPrice={item.discountedPrice}/>)
+            newarrivals.map(item=><Newarrival heroImageURL={item.heroImageURL} category={item.category} brand={item.brand} price={item.price} discountedPrice={item.discountedPrice}/>)
           }
           
         </div>
