@@ -11,8 +11,7 @@ function Homepage() {
   
   const[categories,setCategories] = useState([])
   const[newarrivals,setNewarrivals] = useState([])
-  // const[product,setProduct] = useState()
-  // const[product,setProduct] = useState()
+
 
   useEffect (()=>{
     axios.get("http://localhost/homepage/top-rated").then((res)=>setTopRated(res.data.data)).catch((err)=>console.log(err))
@@ -48,7 +47,7 @@ function Homepage() {
           showBullets={true}
           showNavs={true}
         />
-      </div>{" "}
+      </div>
       <br />
       <br />
       <div className="heading ">

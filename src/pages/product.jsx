@@ -23,7 +23,7 @@ function Product(props) {
           <p>{props.rating}</p>
         </div>
         <div>
-          <p>40%OFF</p>
+          <p>{Math.floor(100 * (props.price - props.discountedPrice)/props.price)}%OFF</p>
         </div>
       </div>
 
