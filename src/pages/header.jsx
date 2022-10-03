@@ -11,7 +11,7 @@ function Header() {
         <div className="">
           <img
             className="header-logo-image"
-            src="https://cdn.shopify.com/s/files/1/0570/9070/3556/files/krishna-socialsharing-img_9fa6e1ed-453b-4d0f-91fb-37e44e9b36f7.jpg?v=1632248908"
+            src="https://www.organicvedic.in/wp-content/uploads/2020/08/cropped-organic-vedic-logo.png"
             alt="error image not found"
           />
         </div>

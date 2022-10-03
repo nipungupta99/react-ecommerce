@@ -4,6 +4,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import OrderDetailPage from "./pages/orderdetailpage";
 import YourOrderPage from "./pages/YourOrderPage";
 import Header from "./pages/header";
+import CategoryPage from "./pages/CategoryPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path={"/orderDetailPage"} element={<OrderDetailPage />} />
         <Route path={"/yourOrderPage"} element={<YourOrderPage />} />
         <Route path={"/header"} element={<Header />} />
+        <Route path="/categoryPage" element={<CategoryPage />} />
       </Routes>
     </BrowserRouter>
   );

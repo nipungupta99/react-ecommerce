@@ -61,7 +61,7 @@ function ProductDetailsPage() {
         <br />
         <div>
           <p>
-            {data.ratingAndReviews.ratingsAndReviews.map((item) => (
+            {data?.ratingAndReviews?.ratingsAndReviews.map((item) => (
               <div>{item?.review}</div>
             ))}
           </p>
