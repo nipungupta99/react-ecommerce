@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/productdetailpages.scss";
 import CategorySlide from "../pages/CategorySlide";
+import axios from "axios";
 
 function ProductDetailsPage() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost/products/6069920fbea8bc0436aae959")
+      .then((res) => setData(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <main className="container">
       <section className=" d-flex ">
         <div className=" w-50">
           <img
-            className="product-details-image-items"
-            src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            className="product-details-image-items "
+            src={data.heroImageURL}
             alt="image not found"
           />
         </div>
 
         <div className=" w-50 text-center p-5 ">
-          <h1 className="">Product name</h1>
+          <h1 className="">{data.name}</h1>
           <br />
 
           <div className=" d-flex">
@@ -24,31 +34,17 @@ function ProductDetailsPage() {
           </div>
 
           <br />
-          <p className=" w-100 ">
+          <p className="border d-flex border-danger w-100 ">
             <h3>
-              <b>$500/</b>
+              <b className="p-3">{data.price}</b>
+            </h3>
+            <h3>
+              <b className="discount-price ">{data.discountedPrice}</b>
             </h3>
           </p>
           <br />
           <p>
-            <h6 className="w-100 ">
-              "But I must explain to you how all this mistaken idea of
-              denouncing pleasure and praising pain was born and I will give you
-              a complete account of the system, and expound the actual teachings
-              of the great explorer of the truth, the master-builder of human
-              happiness. No one rejects, dislikes, or avoids pleasure itself,
-              because it is pleasure, but because those who do not know how to
-              pursue pleasure rationally encounter consequences that are
-              extremely painful. Nor again is there anyone who loves or pursues
-              or desires to obtain pain of itself, because it is pain, but
-              because occasionally circumstances occur in which toil and pain
-              can procure him some great pleasure. To take a trivial example,
-              which of us ever undertakes laborious physical exercise, except to
-              obtain some advantage from it? But who has any right to find fault
-              with a man who chooses to enjoy a pleasure that has no annoying
-              consequences, or one who avoids a pain that produces no resultant
-              pleasure?"
-            </h6>
+            <h6 className="w-100 ">{data.description}</h6>
           </p>
           <br />
           <button className="btn btn-outline-warning w-50">add to cart</button>
@@ -57,21 +53,17 @@ function ProductDetailsPage() {
       <section>
         <h3>Ratings and Reviews</h3>
         <br />
-        <h1>4.0 ✭</h1>
+        <h1>
+          {data?.ratingAndReviews?.aggregation?.averageRating?.toFixed(1)}
+        </h1>
+        <h6>{data?.ratingAndReviews?.aggregation?.totalReviews} Reviews</h6>
+        <h6>{data?.ratingAndReviews?.aggregation?.totalRatings} Rating</h6>
         <br />
-
         <div>
           <p>
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when looking at its layout. The point
-            of using Lorem Ipsum is that it has a more-or-less normal
-            distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing
-            packages and web page editors now use Lorem Ipsum as their default
-            model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour
-            and the like).
+            {data.ratingAndReviews.ratingsAndReviews.map((item) => (
+              <div>{item?.review}</div>
+            ))}
           </p>
           <br />
           <p>
