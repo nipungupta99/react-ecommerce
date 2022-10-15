@@ -2,6 +2,7 @@ import React from "react";
 import HomePage from "./pages/HomePage";
 import Cart from "./pages/Cart"
 import Profilepage from "./pages/Profilepage"
+import Createproduct from "./pages/Createproduct"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './styles/styles.scss'
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profilepage" element={<Profilepage />} />
+          <Route path="/Createproduct" element={<Createproduct />} />
         </Routes>
       </BrowserRouter>
     </div>
